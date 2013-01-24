@@ -12,7 +12,8 @@ pktnum = 0
 while True:
 	zipcode = random.randrange(1,100000)
 
-	# print "Sending packet",pktnum, zipcode,temperature,relhumidity
+	if(pktnum%10000==0):
+		print "Sending packet",pktnum, zipcode
 	socket.send("%d %d %d" % (zipcode, 1, 1))
 	pktnum+=1
 
